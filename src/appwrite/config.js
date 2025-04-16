@@ -10,7 +10,6 @@ export class Service{
         this.client
         .setEndpoint (conf.appwriteUrl)
         .setProject(conf.appwriteProjectId);
-        this.account = new Account (this.client);
         this.databases = new Databases(this.client);
         this.bucket = new Storage(this.client);
     }
@@ -87,7 +86,7 @@ export class Service{
             )
         } catch (error) {
             console.log ("Appwrite service : getPosts error ", error);
-            return False
+            return false
         }
     }
     
